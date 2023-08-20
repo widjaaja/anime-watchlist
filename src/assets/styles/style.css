@@ -655,6 +655,7 @@ ol {
 	height: 325px;
 	position: relative;
 	border-radius: 5px;
+	cursor: pointer;
 }
 
 .product__item__pic .ep {
@@ -994,6 +995,7 @@ ol {
 }
 
 .anime__details__title {
+	max-width: 750px;
 	margin-bottom: 20px;
 }
 

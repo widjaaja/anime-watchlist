@@ -1,6 +1,7 @@
+// Layout Component
 import CmsHeader from './layouts/cms-header';
-
 import HomePage from './pages/home/home-page';
+import DetailPage from './pages/home/detail-page';
 
 // CSS
 import "./assets/styles/bootstrap.min.css";
@@ -8,15 +9,37 @@ import "./assets/styles/elegant-icons.css";
 import "./assets/styles/font-awesome.min.css";
 import './assets/styles/style.css';
 
+//Library
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom"
+
 
 function App() {
+
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <HomePage />,
+    },
+
+    {
+      path: "/home",
+      element: <HomePage />,
+    },
+
+    {
+      path: "/detail",
+      element: <DetailPage />,
+    },
+  ])
+
   return (
     <div className="App">
       <CmsHeader></CmsHeader>
-
-      {/* <!-- Product Section Begin --> */}
-      <HomePage></HomePage>
-      {/* <!-- Product Section End --> */}
+      
+      <RouterProvider router={router} />
 
       {/* Footer Section Begin */}
       <footer class="footer">

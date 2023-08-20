@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { useQuery } from '@apollo/client';
 import {
     GET_TRENDING_ANIME, 
@@ -8,6 +9,7 @@ import {
 } from '../../services/home-service'
 
 function TrendingProduct({ truncateString }) {
+    const navigate = useNavigate();
     const { loading, error, data } = useQuery(GET_TRENDING_ANIME, {
         variables: { 
             page: 1, 
@@ -21,12 +23,16 @@ function TrendingProduct({ truncateString }) {
     if (error) return <p>Error : {error.message}</p>;
     console.log("Trending ANIME", data);
 
+    const redirect = (id) => {
+        navigate(`/detail?anime=${id}`);
+    }
+
     return (
         <div className="row">
             {data.Page.media.map(({coverImage, title, id}) => (
                 <div key={id} className="col-lg-4 col-md-6 col-sm-6">
                     <div className="product__item">
-                        <div style={{backgroundImage: `url(${coverImage.extraLarge})`}} className="product__item__pic set-bg">
+                        <div onClick={() => redirect(id)} style={{backgroundImage: `url(${coverImage.extraLarge})`}} className="product__item__pic set-bg">
                             <div className="ep">18 / 18</div>
                             <div className="comment"><i className="fa fa-comments"></i> 11</div>
                             <div className="view"><i className="fa fa-eye"></i> 9141</div>

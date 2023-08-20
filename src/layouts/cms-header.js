@@ -7,7 +7,7 @@ function CmsHeader() {
             <div class="row">
                 <div class="col-lg-2">
                     <div class="header__logo">
-                        <a href="./index.html">
+                        <a href="/">
                             <img src={Logo} alt="" />
                         </a>
                     </div>
@@ -28,7 +28,7 @@ function CmsHeader() {
                                     </ul>
                                 </li>
                                 <li><a href="./blog.html">Our Blog</a></li>
-                                <li><a href="#">Contacts</a></li>
+                                <li><a href="/">Contacts</a></li>
                             </ul>
                         </nav>
                     </div>
