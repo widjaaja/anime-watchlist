@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import CmsHeader from './layouts/cms-header';
+
+import HomePage from './pages/home/home-page';
+
+// Bootstrap CSS
+import "./assets/styles/bootstrap.min.css";
+// Bootstrap Bundle JS
+// import "./assets/js/bootstrap.bundle.min";
+import './assets/styles/style.css';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <CmsHeader></CmsHeader>
+
+      {/* <!-- Product Section Begin --> */}
+      <HomePage></HomePage>
+      {/* <!-- Product Section End --> */}
     </div>
   );
 }
